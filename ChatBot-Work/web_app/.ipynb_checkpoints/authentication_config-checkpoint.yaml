@@ -1,0 +1,17 @@
+credentials:
+  usernames:
+    rglicket:
+      email: rglickert@me.com
+      name: Bobby
+      password: $2b$12$YvnGjUUFv35QRNz/J9o0iOVrBWQPaabqsS.AtqdEsbOIkk/iD058W # To be replaced with hashed password
+    m-ali-awan:
+      email: muhammad.edtech@gmail.com
+      name: Muhammad
+      password: $2b$12$Oo4hGsQwHLvJfWJvqUMKZOSvzjsI/kpFNx5P3GXLE5hhERcf6wfxi # To be replaced with hashed password
+cookie:
+  expiry_days: 30
+  key: random_signature_key # Must be string
+  name: misterwhisper-custom-chatbot
+preauthorized:
+  emails:
+  - muhammad.edtech@gmail.com
