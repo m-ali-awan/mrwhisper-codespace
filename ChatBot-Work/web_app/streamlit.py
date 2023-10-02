@@ -11,6 +11,16 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
 # creds and variables
+
+
+# Custom image for the app icon and the assistant's avatar
+company_logo = '/home/ubuntu/workspace/mrwhisper-codespace/ChatBot-Work/web_app/assets/SCR-20231002-owdl.png'
+
+# Configure Streamlit page
+st.set_page_config(
+    page_title="MisterWhisper Chatbot",
+    page_icon=company_logo
+)
 with open('authentication_config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 authenticator = Authenticate(
@@ -22,6 +32,8 @@ authenticator = Authenticate(
 )
 name, authentication_status, username = authenticator.login('Login', 'main')
 openai.api_key = st.secrets["OPENAI_API_KEY"]
+
+
 
 
 

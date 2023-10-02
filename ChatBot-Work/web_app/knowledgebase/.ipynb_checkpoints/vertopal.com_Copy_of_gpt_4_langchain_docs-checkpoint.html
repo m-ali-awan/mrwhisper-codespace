@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>e744e9f0336b4e7095838cdefc51426a</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="cell markdown" id="GFLLl1Agum8O">
+<p><a
+href="https://colab.research.google.com/github/pinecone-io/examples/blob/master/docs/gpt-4-langchain-docs.ipynb"><img
+src="https://colab.research.google.com/assets/colab-badge.svg"
+alt="Open In Colab" /></a> <a
+href="https://nbviewer.org/github/pinecone-io/examples/blob/master/docs/gpt-4-langchain-docs.ipynb"><img
+src="https://raw.githubusercontent.com/pinecone-io/examples/master/assets/nbviewer-shield.svg"
+alt="Open nbviewer" /></a></p>
+<h1 id="gpt4-with-retrieval-augmentation-over-langchain-docs">GPT4 with
+Retrieval Augmentation over LangChain Docs</h1>
+<p>In this notebook we'll work through an example of using GPT-4 with
+retrieval augmentation to answer questions about the LangChain Python
+library.</p>
+<p><a
+href="https://github.com/pinecone-io/examples/blob/master/learn/generation/openai/gpt-4-langchain-docs.ipynb"><img
+src="https://raw.githubusercontent.com/pinecone-io/examples/master/assets/full-link.svg"
+alt="Open nbviewer" /></a></p>
+<p>To begin we must install the prerequisite libraries:</p>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="_HDKlQO5svqI" data-outputId="275263b8-6a09-4a7d-914c-c069b28784c4">
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>qU <span class="op">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  openai<span class="op">==</span><span class="fl">0.27.7</span> <span class="op">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;pinecone-client[grpc]&quot;</span><span class="op">==</span><span class="fl">2.2.1</span> <span class="op">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  pinecone<span class="op">-</span>datasets<span class="op">==</span><span class="st">&#39;0.5.0rc11&#39;</span></span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 20.7 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.0/60.0 kB 2.3 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 283.7/283.7 kB 30.5 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 65.5 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 69.1 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.4/16.4 MB 85.8 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.9/34.9 MB 18.3 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.1/160.1 kB 15.3 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.5/114.5 kB 6.9 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 268.8/268.8 kB 12.1 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 149.6/149.6 kB 16.3 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 223.0/223.0 kB 23.7 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 218.0/218.0 kB 26.4 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 218.0/218.0 kB 23.3 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.7/211.7 kB 24.4 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.7/72.7 kB 8.2 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 102.2 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 115.6/115.6 kB 13.7 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 115.5/115.5 kB 12.8 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 115.3/115.3 kB 13.3 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 115.1/115.1 kB 13.5 MB/s eta 0:00:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.6/114.6 kB 12.5 MB/s eta 0:00:00
+</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="bZdWl7kR9KWJ">
+<hr />
+<p>🚨 <em>Note: the above <code>pip install</code> is formatted for
+Jupyter notebooks. If running elsewhere you may need to drop the
+<code>!</code>.</em></p>
+<hr />
+</div>
+<div class="cell markdown" id="NgUEJ6vDum8q">
+<p>In this example, we will use a pre-embedding dataset of the LangChain
+docs from <a
+href="https://python.langchain.com/en/latest/">python.langchain.readthedocs.com/</a>.
+If you'd like to see how we perform the data preparation refer to <a
+href="">this notebook</a>.</p>
+<p>Let's go ahead and download the dataset.</p>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:393}"
+id="phk1tQ0U92DM" data-outputId="2fa9baec-f4eb-4e32-c28a-34c4fffd146f">
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pinecone_datasets <span class="im">import</span> load_dataset</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">&#39;langchain-python-docs-text-embedding-ada-002&#39;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># we drop sparse_values as they are not needed for this example</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>dataset.documents.drop([<span class="st">&#39;metadata&#39;</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dataset.documents.rename(columns<span class="op">=</span>{<span class="st">&#39;blob&#39;</span>: <span class="st">&#39;metadata&#39;</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>dataset.head()</span></code></pre></div>
+<div class="output stream stderr">
+<pre><code>/usr/local/lib/python3.10/dist-packages/pinecone_datasets/dataset.py:125: UserWarning: WARNING: No data found at: gs://pinecone-datasets-dev/langchain-python-docs-text-embedding-ada-002/queries/*.parquet. Returning empty DF
+  warnings.warn(
+</code></pre>
+</div>
+<div class="output execute_result" data-execution_count="21">
+
+  <div id="df-57608204-5b8f-4e8a-bd52-0277fdd796cd">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>values</th>
+      <th>metadata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>417ede5d-39be-498f-b518-f47ed4e53b90</td>
+      <td>[0.005949743557721376, 0.01983247883617878, -0...</td>
+      <td>{'chunk': 0, 'text': '.rst
+.pdf
+Welcome to Lan...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>110f550d-110b-4378-b95e-141397fa21bc</td>
+      <td>[0.009401749819517136, 0.02443608082830906, 0....</td>
+      <td>{'chunk': 1, 'text': 'Use Cases#
+Best practice...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>d5f00f02-3295-4567-b297-5e3262dc2728</td>
+      <td>[-0.005517194513231516, 0.0208403542637825, 0....</td>
+      <td>{'chunk': 2, 'text': 'Gallery: A collection of...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0b6fe3c6-1f0e-4608-a950-43231e46b08a</td>
+      <td>[-0.006499645300209522, 0.0011573900701478124,...</td>
+      <td>{'chunk': 0, 'text': 'Search
+Error
+Please acti...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>39d5f15f-b973-42c0-8c9b-a2df49b627dc</td>
+      <td>[-0.005658374633640051, 0.00817849114537239, 0...</td>
+      <td>{'chunk': 0, 'text': '.md
+.pdf
+Dependents
+Depe...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-57608204-5b8f-4e8a-bd52-0277fdd796cd')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-57608204-5b8f-4e8a-bd52-0277fdd796cd button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-57608204-5b8f-4e8a-bd52-0277fdd796cd');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+</div>
+<div class="cell markdown" id="JegURaAg2PuN">
+<p>Our chunks are ready so now we move onto embedding and indexing
+everything.</p>
+</div>
+<section id="initializing-the-index" class="cell markdown"
+id="WPi4MZvMNvUH">
+<h2>Initializing the Index</h2>
+</section>
+<div class="cell markdown" id="H5RRQArrN2lN">
+<p>Now we need a place to store these embeddings and enable a efficient
+vector search through them all. To do that we use Pinecone, we can get a
+<a href="https://app.pinecone.io/">free API key</a> and enter it below
+where we will initialize our connection to Pinecone and create a new
+index.</p>
+</div>
+<div class="cell code" id="ZO5_EdUAum8v">
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pinecone</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># initialize connection to pinecone (get API key at app.pinecone.io)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> os.getenv(<span class="st">&quot;PINECONE_API_KEY&quot;</span>) <span class="kw">or</span> <span class="st">&quot;PINECONE_API_KEY&quot;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># find your environment next to the api key in pinecone console</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>env <span class="op">=</span> os.getenv(<span class="st">&quot;PINECONE_ENVIRONMENT&quot;</span>) <span class="kw">or</span> <span class="st">&quot;PINECONE_ENVIRONMENT&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>pinecone.init(api_key<span class="op">=</span>api_key, environment<span class="op">=</span>env)</span></code></pre></div>
+</div>
+<div class="cell code" id="2GQAnohhum8v"
+data-tags="[&quot;parameters&quot;]">
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>index_name <span class="op">=</span> <span class="st">&#39;gpt-4-langchain-docs-fast&#39;</span></span></code></pre></div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="EO8sbJFZNyIZ" data-outputId="864ac7a6-25fe-455b-9b8a-8b45f583987c">
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check if index already exists (it shouldn&#39;t if this is first time)</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> index_name <span class="kw">not</span> <span class="kw">in</span> pinecone.list_indexes():</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if does not exist, create index</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    pinecone.create_index(</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        index_name,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        dimension<span class="op">=</span><span class="dv">1536</span>,  <span class="co"># dimensionality of text-embedding-ada-002</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        metric<span class="op">=</span><span class="st">&#39;cosine&#39;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># wait for index to be initialized</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># connect to index</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> pinecone.GRPCIndex(index_name)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># view index stats</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>index.describe_index_stats()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="19">
+<pre><code>{&#39;dimension&#39;: 1536,
+ &#39;index_fullness&#39;: 0.0,
+ &#39;namespaces&#39;: {},
+ &#39;total_vector_count&#39;: 0}</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="ezSTzN2rPa2o">
+<p>We can see the index is currently empty with a
+<code>total_vector_count</code> of <code>0</code>. We can begin
+populating it with OpenAI <code>text-embedding-ada-002</code> built
+embeddings like so:</p>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:155,&quot;referenced_widgets&quot;:[&quot;9b9b464993e24f2ba80c85d30f1f2ae4&quot;,&quot;38632470c650411e937b7b3893450ac4&quot;,&quot;65a3ad0c971c4a848e742263313af53b&quot;,&quot;9a03775c460d4931bd911b4bcdde5b50&quot;,&quot;0499e771fc7c4c44aaa34715b695db14&quot;,&quot;683885a9181244098883b5e4180ec447&quot;,&quot;83f37372965746faa21cf43dad69fede&quot;,&quot;c8d51d1b53714647b960bceb42e16867&quot;,&quot;0a447a43050642748e8bef0af11dd8dc&quot;,&quot;5510616e20374a92aa76037557203def&quot;,&quot;9ea3f496115f4663b4596efeafcc18f6&quot;,&quot;b453cc511c7747398718ab8ec11cdaca&quot;,&quot;407bb220f41c47429352c19922459858&quot;,&quot;3709f6f136914c5f90cd21bbb6fc0dda&quot;,&quot;e7138b87ce8c49d881b878f6ca333c3d&quot;,&quot;3f1d7e92a02b40b58ccefb7c8ce7f301&quot;,&quot;b415838f711645a688afa5628850bfe0&quot;,&quot;ab8c9025f140460a999792ffe027ea86&quot;,&quot;4ad1a29b9de8478eb45dc7a050cce5f7&quot;,&quot;fb751aefaa9641c186a698bf961c9a20&quot;,&quot;fb0384555d1040a990bb71d498050ff1&quot;,&quot;eeb5ba13750d432bb1424349abb9fc7d&quot;]}"
+id="iZbFbulAPeop" data-outputId="087596ce-d125-4875-8cc5-7931caa085c5">
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> batch <span class="kw">in</span> dataset.iter_documents(batch_size<span class="op">=</span><span class="dv">100</span>):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    index.upsert(batch)</span></code></pre></div>
+<div class="output display_data">
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;9b9b464993e24f2ba80c85d30f1f2ae4&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;b453cc511c7747398718ab8ec11cdaca&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output execute_result" data-execution_count="23">
+<pre><code>upserted_count: 3476</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="YttJOrEtQIF9">
+<p>Now we've added all of our langchain docs to the index. With that we
+can move on to retrieval and then answer generation using GPT-4.</p>
+</div>
+<section id="retrieval" class="cell markdown" id="FumVmMRlQQ7w">
+<h2>Retrieval</h2>
+</section>
+<div class="cell markdown" id="nLRODeL-QTJ9">
+<p>To search through our documents we first need to create a query
+vector <code>xq</code>. Using <code>xq</code> we will retrieve the most
+relevant chunks from the LangChain docs. To create that query vector we
+must initialize a <code>text-embedding-ada-002</code> embedding model
+with OpenAI. For this, you need an <a
+href="https://platform.openai.com/">OpenAI API key</a>.</p>
+</div>
+<div class="cell code" id="dhDTQnqp-yyx">
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> openai</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># get api key from platform.openai.com</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>openai.api_key <span class="op">=</span> os.getenv(<span class="st">&#39;OPENAI_API_KEY&#39;</span>) <span class="kw">or</span> <span class="st">&#39;OPENAI_API_KEY&#39;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>embed_model <span class="op">=</span> <span class="st">&quot;text-embedding-ada-002&quot;</span></span></code></pre></div>
+</div>
+<div class="cell code" id="FMUPdX9cQQYC">
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">&quot;how do I use the LLMChain in LangChain?&quot;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> openai.Embedding.create(</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">input</span><span class="op">=</span>[query],</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    engine<span class="op">=</span>embed_model</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve from Pinecone</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>xq <span class="op">=</span> res[<span class="st">&#39;data&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;embedding&#39;</span>]</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># get relevant contexts (including the questions)</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> index.query(xq, top_k<span class="op">=</span><span class="dv">5</span>, include_metadata<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="zl9SrFPkQjg-" data-outputId="8b97e65f-b8eb-4754-aaed-a38f852bd0be">
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>res</span></code></pre></div>
+<div class="output execute_result" data-execution_count="27">
+<pre><code>{&#39;matches&#39;: [{&#39;id&#39;: &#39;2f66a6a5-c829-4118-acb8-f08667f3f95d&#39;,
+              &#39;metadata&#39;: {&#39;chunk&#39;: 2.0,
+                           &#39;text&#39;: &#39;for full documentation on:\\n\\nGetting &#39;
+                                   &#39;started (installation, setting up the &#39;
+                                   &#39;environment, simple examples)\\n\\nHow-To &#39;
+                                   &#39;examples (demos, integrations, helper &#39;
+                                   &#39;functions)\\n\\nReference (full API &#39;
+                                   &#39;docs)\\n\\nResources (high-level &#39;
+                                   &#39;explanation of core &#39;
+                                   &#39;concepts)\\n\\nð\\x9f\\x9a\\x80 What can &#39;
+                                   &#39;this help with?\\n\\nThere are six main &#39;
+                                   &#39;areas that LangChain is designed to help &#39;
+                                   &#39;with.\\nThese are, in increasing order of &#39;
+                                   &#39;complexity:\\n\\nð\\x9f“\\x83 LLMs and &#39;
+                                   &#39;Prompts:\\n\\nThis includes prompt &#39;
+                                   &#39;management, prompt optimization, a generic &#39;
+                                   &#39;interface for all LLMs, and common &#39;
+                                   &#39;utilities for working with &#39;
+                                   &#39;LLMs.\\n\\nð\\x9f”\\x97 &#39;
+                                   &#39;Chains:\\n\\nChains go beyond a single LLM &#39;
+                                   &#39;call and involve sequences of calls &#39;
+                                   &#39;(whether to an LLM or a different &#39;
+                                   &#39;utility). LangChain provides a standard &#39;
+                                   &#39;interface for chains, lots of integrations &#39;
+                                   &#39;with other tools, and end-to-end chains &#39;
+                                   &#39;for common applications.\\n\\nð\\x9f“\\x9a &#39;
+                                   &#39;Data Augmented Generation:\\n\\nData &#39;
+                                   &#39;Augmented Generation involves specific &#39;
+                                   &#39;types of chains that first interact with &#39;
+                                   &#39;an external data source to fetch data for &#39;
+                                   &#39;use in the generation step. Examples &#39;
+                                   &#39;include summarization of long pieces of &#39;
+                                   &#39;text and question/answering over specific &#39;
+                                   &#39;data sources.\\n\\nð\\x9f¤\\x96 &#39;
+                                   &#39;Agents:\\n\\nAgents involve an LLM making &#39;
+                                   &#39;decisions about which Actions to take, &#39;
+                                   &#39;taking that Action, seeing an Observation, &#39;
+                                   &#39;and repeating that until done. LangChain&#39;,
+                           &#39;url&#39;: &#39;https://python.langchain.com/en/latest/modules/indexes/document_loaders/examples/markdown.html&#39;},
+              &#39;score&#39;: 0.86983985,
+              &#39;sparse_values&#39;: {&#39;indices&#39;: [], &#39;values&#39;: []},
+              &#39;values&#39;: []},
+             {&#39;id&#39;: &#39;e26407fd-df5d-4e88-a59e-2ffd2b2b87d6&#39;,
+              &#39;metadata&#39;: {&#39;chunk&#39;: 17.0,
+                           &#39;text&#39;: &#39;an Observation, and repeating that until &#39;
+                                   &#39;done. LangChain provides a standard &#39;
+                                   &#39;interface for agents, a selection of &#39;
+                                   &#39;agents to choose from, and examples of end &#39;
+                                   &#39;to end agents.\\n\\n\\n\\n\\n\\nUse &#39;
+                                   &#39;Cases#\\nThe above modules can be used in &#39;
+                                   &#39;a variety of ways. LangChain also provides &#39;
+                                   &#39;guidance and assistance in this. Below are &#39;
+                                   &#39;some of the common use cases LangChain &#39;
+                                   &#39;supports.\\n\\nPersonal Assistants: The &#39;
+                                   &#39;main LangChain use case. Personal &#39;
+                                   &#39;assistants need to take actions, remember &#39;
+                                   &#39;interactions, and have knowledge about &#39;
+                                   &#39;your data.\\nQuestion Answering: The &#39;
+                                   &#39;second big LangChain use case. Answering &#39;
+                                   &#39;questions over specific documents, only &#39;
+                                   &#39;utilizing the information in those &#39;
+                                   &#39;documents to construct an &#39;
+                                   &#39;answer.\\nChatbots: Since language models &#39;
+                                   &#39;are good at producing text, that makes &#39;
+                                   &#39;them ideal for creating &#39;
+                                   &#39;chatbots.\\nQuerying Tabular Data: If you &#39;
+                                   &#39;want to understand how to use LLMs to &#39;
+                                   &#39;query data that is stored in a tabular &#39;
+                                   &#39;format (csvs, SQL, dataframes, etc) you &#39;
+                                   &#39;should read this page.\\nInteracting with &#39;
+                                   &#39;APIs: Enabling LLMs to interact with APIs &#39;
+                                   &#39;is extremely powerful in order to give &#39;
+                                   &#39;them more up-to-date information and allow &#39;
+                                   &#39;them to take actions.\\nExtraction: &#39;
+                                   &#39;Extract structured information from &#39;
+                                   &#39;text.\\nSummarization: Summarizing longer &#39;
+                                   &#39;documents into shorter, more condensed &#39;
+                                   &#39;chunks of information. A type of Data &#39;
+                                   &#39;Augmented Generation.\\nEvaluation: &#39;
+                                   &#39;Generative models are notoriously&#39;,
+                           &#39;url&#39;: &#39;https://python.langchain.com/en/latest/modules/indexes/document_loaders/examples/sitemap.html&#39;},
+              &#39;score&#39;: 0.8587692,
+              &#39;sparse_values&#39;: {&#39;indices&#39;: [], &#39;values&#39;: []},
+              &#39;values&#39;: []},
+             {&#39;id&#39;: &#39;d578f3d3-8107-4fb1-87cd-0c81923761f7&#39;,
+              &#39;metadata&#39;: {&#39;chunk&#39;: 7.0,
+                           &#39;text&#39;: &#39;working with raw text, they work with &#39;
+                                   &#39;messages. LangChain provides a standard &#39;
+                                   &#39;interface for working with them and doing &#39;
+                                   &#39;all the same things as &#39;
+                                   &#39;above.\\n\\n\\n\\n\\n\\nUse Cases#\\nThe &#39;
+                                   &#39;above modules can be used in a variety of &#39;
+                                   &#39;ways. LangChain also provides guidance and &#39;
+                                   &#39;assistance in this. Below are some of the &#39;
+                                   &#39;common use cases LangChain &#39;
+                                   &#39;supports.\\n\\nAgents: Agents are systems &#39;
+                                   &#39;that use a language model to interact with &#39;
+                                   &#39;other tools. These can be used to do more &#39;
+                                   &#39;grounded question/answering, interact with &#39;
+                                   &#39;APIs, or even take actions.\\nChatbots: &#39;
+                                   &#39;Since language models are good at &#39;
+                                   &#39;producing text, that makes them ideal for &#39;
+                                   &#39;creating chatbots.\\nData Augmented &#39;
+                                   &#39;Generation: Data Augmented Generation &#39;
+                                   &#39;involves specific types of chains that &#39;
+                                   &#39;first interact with an external datasource &#39;
+                                   &#39;to fetch data to use in the generation &#39;
+                                   &#39;step. Examples of this include &#39;
+                                   &#39;summarization of long pieces of text and &#39;
+                                   &#39;question/answering over specific data &#39;
+                                   &#39;sources.\\nQuestion Answering: Answering &#39;
+                                   &#39;questions over specific documents, only &#39;
+                                   &#39;utilizing the information in those &#39;
+                                   &#39;documents to construct an answer. A type &#39;
+                                   &#39;of Data Augmented &#39;
+                                   &#39;Generation.\\nSummarization: Summarizing &#39;
+                                   &#39;longer documents into shorter, more &#39;
+                                   &#39;condensed chunks of information. A type of &#39;
+                                   &#39;Data Augmented Generation.\\nQuerying &#39;
+                                   &#39;Tabular Data: If you want to understand &#39;
+                                   &#39;how to use LLMs to query data that is &#39;
+                                   &#39;stored in a tabular format (csvs,&#39;,
+                           &#39;url&#39;: &#39;https://python.langchain.com/en/latest/modules/indexes/document_loaders/examples/sitemap.html&#39;},
+              &#39;score&#39;: 0.85652447,
+              &#39;sparse_values&#39;: {&#39;indices&#39;: [], &#39;values&#39;: []},
+              &#39;values&#39;: []},
+             {&#39;id&#39;: &#39;2a19b051-2bf3-4675-ac84-8cfb859c9fc7&#39;,
+              &#39;metadata&#39;: {&#39;chunk&#39;: 1.0,
+                           &#39;text&#39;: &#39;Initiate the LLMChain\n&#39;
+                                   &#39;Run the LLMChain\n&#39;
+                                   &#39;By Harrison Chase\n&#39;
+                                   &#39;    \n&#39;
+                                   &#39;      © Copyright 2023, Harrison Chase.\n&#39;
+                                   &#39;      \n&#39;
+                                   &#39;  Last updated on May 30, 2023.&#39;,
+                           &#39;url&#39;: &#39;https://python.langchain.com/en/latest/modules/models/llms/integrations/pipelineai_example.html&#39;},
+              &#39;score&#39;: 0.85128254,
+              &#39;sparse_values&#39;: {&#39;indices&#39;: [], &#39;values&#39;: []},
+              &#39;values&#39;: []},
+             {&#39;id&#39;: &#39;badbba15-bc60-4177-89c0-f7f743a7c655&#39;,
+              &#39;metadata&#39;: {&#39;chunk&#39;: 2.0,
+                           &#39;text&#39;: &#39;use memory.\\nIndexes: Language models are &#39;
+                                   &#39;often more powerful when combined with &#39;
+                                   &#39;your own text data - this module covers &#39;
+                                   &#39;best practices for doing exactly &#39;
+                                   &#39;that.\\nChains: Chains go beyond just a &#39;
+                                   &#39;single LLM call, and are sequences of &#39;
+                                   &#39;calls (whether to an LLM or a different &#39;
+                                   &#39;utility). LangChain provides a standard &#39;
+                                   &#39;interface for chains, lots of integrations &#39;
+                                   &#39;with other tools, and end-to-end chains &#39;
+                                   &#39;for common applications.\\nAgents: Agents &#39;
+                                   &#39;involve an LLM making decisions about &#39;
+                                   &#39;which Actions to take, taking that Action, &#39;
+                                   &#39;seeing an Observation, and repeating that &#39;
+                                   &#39;until done. LangChain provides a standard &#39;
+                                   &#39;interface for agents, a selection of &#39;
+                                   &#39;agents to choose from, and examples of end &#39;
+                                   &#39;to end agents.\\nUse Cases\\nThe above &#39;
+                                   &#39;modules can be used in a variety of ways. &#39;
+                                   &#39;LangChain also provides guidance and &#39;
+                                   &#39;assistance in this. Below are some of the &#39;
+                                   &#39;common use cases LangChain &#39;
+                                   &#39;supports.\\nPersonal Assistants: The main &#39;
+                                   &#39;LangChain use case. Personal assistants &#39;
+                                   &#39;need to take actions, remember &#39;
+                                   &#39;interactions, and have knowledge about &#39;
+                                   &#39;your data.\\nQuestion Answering: The &#39;
+                                   &#39;second big LangChain use case. Answering &#39;
+                                   &#39;questions over specific documents, only &#39;
+                                   &#39;utilizing the information in those &#39;
+                                   &#39;documents to construct an &#39;
+                                   &#39;answer.\\nChatbots: Since language models &#39;
+                                   &#39;are good at producing text, that makes &#39;
+                                   &#39;them ideal for creating &#39;
+                                   &#39;chatbots.\\nQuerying Tabular Data: If you &#39;
+                                   &#39;want to understand how to&#39;,
+                           &#39;url&#39;: &#39;https://python.langchain.com/en/latest/modules/indexes/document_loaders/examples/diffbot.html&#39;},
+              &#39;score&#39;: 0.85059077,
+              &#39;sparse_values&#39;: {&#39;indices&#39;: [], &#39;values&#39;: []},
+              &#39;values&#39;: []}],
+ &#39;namespace&#39;: &#39;&#39;}</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="MoBSiDLIUADZ">
+<p>With retrieval complete, we move on to feeding these into GPT-4 to
+produce answers.</p>
+</div>
+<section id="retrieval-augmented-generation" class="cell markdown"
+id="qfzS4-6-UXgX">
+<h2>Retrieval Augmented Generation</h2>
+</section>
+<div class="cell markdown" id="XPC1jQaKUcy0">
+<p>GPT-4 is currently accessed via the <code>ChatCompletions</code>
+endpoint of OpenAI. To add the information we retrieved into the model,
+we need to pass it into our user prompts <em>alongside</em> our original
+query. We can do that like so:</p>
+</div>
+<div class="cell code" id="unZstoHNUHeG">
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get list of retrieved text</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>contexts <span class="op">=</span> [item[<span class="st">&#39;metadata&#39;</span>][<span class="st">&#39;text&#39;</span>] <span class="cf">for</span> item <span class="kw">in</span> res[<span class="st">&#39;matches&#39;</span>]]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>augmented_query <span class="op">=</span> <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">---</span><span class="ch">\n\n</span><span class="st">&quot;</span>.join(contexts)<span class="op">+</span><span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">-----</span><span class="ch">\n\n</span><span class="st">&quot;</span><span class="op">+</span>query</span></code></pre></div>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
+id="LRcEHm0Z9fXE" data-outputId="fd3f082a-9c04-4ee6-8eda-8cb588810fad">
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(augmented_query)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>for full documentation on:\n\nGetting started (installation, setting up the environment, simple examples)\n\nHow-To examples (demos, integrations, helper functions)\n\nReference (full API docs)\n\nResources (high-level explanation of core concepts)\n\nð\x9f\x9a\x80 What can this help with?\n\nThere are six main areas that LangChain is designed to help with.\nThese are, in increasing order of complexity:\n\nð\x9f“\x83 LLMs and Prompts:\n\nThis includes prompt management, prompt optimization, a generic interface for all LLMs, and common utilities for working with LLMs.\n\nð\x9f”\x97 Chains:\n\nChains go beyond a single LLM call and involve sequences of calls (whether to an LLM or a different utility). LangChain provides a standard interface for chains, lots of integrations with other tools, and end-to-end chains for common applications.\n\nð\x9f“\x9a Data Augmented Generation:\n\nData Augmented Generation involves specific types of chains that first interact with an external data source to fetch data for use in the generation step. Examples include summarization of long pieces of text and question/answering over specific data sources.\n\nð\x9f¤\x96 Agents:\n\nAgents involve an LLM making decisions about which Actions to take, taking that Action, seeing an Observation, and repeating that until done. LangChain
+
+---
+
+an Observation, and repeating that until done. LangChain provides a standard interface for agents, a selection of agents to choose from, and examples of end to end agents.\n\n\n\n\n\nUse Cases#\nThe above modules can be used in a variety of ways. LangChain also provides guidance and assistance in this. Below are some of the common use cases LangChain supports.\n\nPersonal Assistants: The main LangChain use case. Personal assistants need to take actions, remember interactions, and have knowledge about your data.\nQuestion Answering: The second big LangChain use case. Answering questions over specific documents, only utilizing the information in those documents to construct an answer.\nChatbots: Since language models are good at producing text, that makes them ideal for creating chatbots.\nQuerying Tabular Data: If you want to understand how to use LLMs to query data that is stored in a tabular format (csvs, SQL, dataframes, etc) you should read this page.\nInteracting with APIs: Enabling LLMs to interact with APIs is extremely powerful in order to give them more up-to-date information and allow them to take actions.\nExtraction: Extract structured information from text.\nSummarization: Summarizing longer documents into shorter, more condensed chunks of information. A type of Data Augmented Generation.\nEvaluation: Generative models are notoriously
+
+---
+
+working with raw text, they work with messages. LangChain provides a standard interface for working with them and doing all the same things as above.\n\n\n\n\n\nUse Cases#\nThe above modules can be used in a variety of ways. LangChain also provides guidance and assistance in this. Below are some of the common use cases LangChain supports.\n\nAgents: Agents are systems that use a language model to interact with other tools. These can be used to do more grounded question/answering, interact with APIs, or even take actions.\nChatbots: Since language models are good at producing text, that makes them ideal for creating chatbots.\nData Augmented Generation: Data Augmented Generation involves specific types of chains that first interact with an external datasource to fetch data to use in the generation step. Examples of this include summarization of long pieces of text and question/answering over specific data sources.\nQuestion Answering: Answering questions over specific documents, only utilizing the information in those documents to construct an answer. A type of Data Augmented Generation.\nSummarization: Summarizing longer documents into shorter, more condensed chunks of information. A type of Data Augmented Generation.\nQuerying Tabular Data: If you want to understand how to use LLMs to query data that is stored in a tabular format (csvs,
+
+---
+
+Initiate the LLMChain
+Run the LLMChain
+By Harrison Chase
+    
+      © Copyright 2023, Harrison Chase.
+      
+  Last updated on May 30, 2023.
+
+---
+
+use memory.\nIndexes: Language models are often more powerful when combined with your own text data - this module covers best practices for doing exactly that.\nChains: Chains go beyond just a single LLM call, and are sequences of calls (whether to an LLM or a different utility). LangChain provides a standard interface for chains, lots of integrations with other tools, and end-to-end chains for common applications.\nAgents: Agents involve an LLM making decisions about which Actions to take, taking that Action, seeing an Observation, and repeating that until done. LangChain provides a standard interface for agents, a selection of agents to choose from, and examples of end to end agents.\nUse Cases\nThe above modules can be used in a variety of ways. LangChain also provides guidance and assistance in this. Below are some of the common use cases LangChain supports.\nPersonal Assistants: The main LangChain use case. Personal assistants need to take actions, remember interactions, and have knowledge about your data.\nQuestion Answering: The second big LangChain use case. Answering questions over specific documents, only utilizing the information in those documents to construct an answer.\nChatbots: Since language models are good at producing text, that makes them ideal for creating chatbots.\nQuerying Tabular Data: If you want to understand how to
+
+-----
+
+how do I use the LLMChain in LangChain?
+</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="sihH_GMiV5_p">
+<p>Now we ask the question:</p>
+</div>
+<div class="cell code" id="IThBqBi8V70d">
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># system message to &#39;prime&#39; the model</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>primer <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;You are Q&amp;A bot. A highly intelligent system that answers</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="ss">user questions based on the information provided by the user above</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="ss">each question. If the information can not be found in the information</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="ss">provided by the user you truthfully say &quot;I don&#39;t know&quot;.</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="ss">&quot;&quot;&quot;</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> openai.ChatCompletion.create(</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">&quot;gpt-4&quot;</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    messages<span class="op">=</span>[</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&quot;role&quot;</span>: <span class="st">&quot;system&quot;</span>, <span class="st">&quot;content&quot;</span>: primer},</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&quot;role&quot;</span>: <span class="st">&quot;user&quot;</span>, <span class="st">&quot;content&quot;</span>: augmented_query}</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="QvS1yJhOWpiJ">
+<p>To display this response nicely, we will display it in markdown.</p>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:300}"
+id="RDo2qeMHWto1" data-outputId="0c8157b4-9753-4f4a-a65c-db5c57a8b857">
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>display(Markdown(res[<span class="st">&#39;choices&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;message&#39;</span>][<span class="st">&#39;content&#39;</span>]))</span></code></pre></div>
+<div class="output display_data">
+<pre><code>&lt;IPython.core.display.Markdown object&gt;</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="eJ-a8MHg0eYQ">
+<p>Let's compare this to a non-augmented query...</p>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:46}"
+id="vwhaSgdF0ZDX" data-outputId="0ff1c0f3-2d77-4f32-b212-09463a4b9605">
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> openai.ChatCompletion.create(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">&quot;gpt-4&quot;</span>,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    messages<span class="op">=</span>[</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&quot;role&quot;</span>: <span class="st">&quot;system&quot;</span>, <span class="st">&quot;content&quot;</span>: primer},</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&quot;role&quot;</span>: <span class="st">&quot;user&quot;</span>, <span class="st">&quot;content&quot;</span>: query}</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>display(Markdown(res[<span class="st">&#39;choices&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;message&#39;</span>][<span class="st">&#39;content&#39;</span>]))</span></code></pre></div>
+<div class="output display_data">
+<pre><code>&lt;IPython.core.display.Markdown object&gt;</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="5CSsA-dW0m_P">
+<p>If we drop the <code>"I don't know"</code> part of the
+<code>primer</code>?</p>
+</div>
+<div class="cell code"
+data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:706}"
+id="Z3svdTCZ0iJ2" data-outputId="40af56fe-a633-48bf-b732-cedf25ebea4b">
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> openai.ChatCompletion.create(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">&quot;gpt-4&quot;</span>,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    messages<span class="op">=</span>[</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&quot;role&quot;</span>: <span class="st">&quot;system&quot;</span>, <span class="st">&quot;content&quot;</span>: <span class="st">&quot;You are Q&amp;A bot. A highly intelligent system that answers user questions&quot;</span>},</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&quot;role&quot;</span>: <span class="st">&quot;user&quot;</span>, <span class="st">&quot;content&quot;</span>: query}</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>display(Markdown(res[<span class="st">&#39;choices&#39;</span>][<span class="dv">0</span>][<span class="st">&#39;message&#39;</span>][<span class="st">&#39;content&#39;</span>]))</span></code></pre></div>
+<div class="output display_data">
+<pre><code>&lt;IPython.core.display.Markdown object&gt;</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="GcGon5672lBb">
+<p>Then we see something even worse than <code>"I don't know"</code> —
+hallucinations. Clearly augmenting our queries with additional context
+can make a huge difference to the performance of our system.</p>
+<p>Great, we've seen how to augment GPT-4 with semantic search to allow
+us to answer LangChain specific queries.</p>
+<p>Once you're finished, we delete the index to save resources.</p>
+</div>
+<div class="cell code" id="Ah_vfEHV2khx">
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>pinecone.delete_index(index_name)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="iEUMlO8M2h4Y">
+<hr />
+</div>
+</body>
+</html>
