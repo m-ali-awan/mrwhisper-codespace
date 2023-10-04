@@ -7,8 +7,13 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.prompts import PromptTemplate
 from langchain.prompts.chat import SystemMessagePromptTemplate
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+from pathlib import Path
+import sys
+sys.path.append('/home/ubuntu/workspace/Creds/')
+from openai_config import OPENAI_API_KEY
+openai.api_key = OPENAI_API_KEY
 
 
 
@@ -38,11 +43,46 @@ memory = ConversationBufferWindowMemory(
 )
 
 llm = ChatOpenAI(model = 'gpt-3.5-turbo-16k',
-                openai_api_key= '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')
+                openai_api_key= OPENAI_API_KEY)
 
 embeddings = OpenAIEmbeddings(model = 'text-embedding-ada-002',
-                              openai_api_key= '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')
+                              openai_api_key= OPENAI_API_KEY)
 
+text_splitter = RecursiveCharacterTextSplitter(
+    separators=["#","##", "###", "\\n\\n","\\n",".", '\n'],
+    chunk_size=1500,
+    chunk_overlap=100)
+
+
+@st.cache_resource(show_spinner=False)
+def load_vectorstore():
+    load_vstore = FAISS.load_local('/home/ubuntu/workspace/Temp/04Oct-FAISS', embeddings = embeddings)
+
+    return load_vstore
+
+    
+
+    
+
+
+vector_store = load_vectorstore()
 @st.cache_data
-def load_chain():
+def load_chain(vector_store = vector_store, llm = llm, memory = memory):
+
+    retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+    chain = ConversationalRetrievalChain.from_llm(llm=llm, 
+                                              retriever=retriever, 
+                                              memory=memory, 
+                                              #get_chat_history=lambda h : h,
+                                              combine_docs_chain_kwargs = {'prompt':prompt},
+                                              verbose=True)
+
+    return chain
+
+
+    
+
+    
+    
+    
     
