@@ -17,7 +17,7 @@ openai.api_key = OPENAI_API_KEY
 
 embeddings = OpenAIEmbeddings(model = 'text-embedding-ada-002',
                               openai_api_key= OPENAI_API_KEY)
-load_vstore = FAISS.load_local('/home/ubuntu/workspace/Temp/04Oct-FAISS', embeddings = embeddings)
+load_vstore = FAISS.load_local('/home/ubuntu/workspace/Temp/07-14Oct/minimal_knowledgebase', embeddings = embeddings)
 
 
 def running_summarize(chat_history, new_query):
@@ -161,21 +161,34 @@ def decision_to_use_context(docs,query):
     return response['choices'][0].message.content
 
 
-def update_vectorstore(load_vstore,document_to_add):
+def update_vectorstore(load_vstore,document_to_add, path):
     load_vstore.add_texts(document_to_add)
-    load_vstore.save_local('/home/ubuntu/workspace/Temp/04Oct-FAISS')
+    load_vstore.save_local(path)
+    print('done')
     return load_vstore
 
 
-def update_vectorstore_docs(load_vstore,document_to_add):
+def update_vectorstore_docs(load_vstore,document_to_add, path):
     load_vstore.add_documents(document_to_add)
-    load_vstore.save_local('/home/ubuntu/workspace/Temp/04Oct-FAISS')
+    load_vstore.save_local(path)
     return load_vstore
 
 text_splitter = RecursiveCharacterTextSplitter(
     separators=["#","##", "###", "\\n\\n","\\n",".", '\n'],
     chunk_size=1500,
     chunk_overlap=100)
+
+def update_pinecone_texts(pinecone_index, texts_to_add):
+    
+    index_name = pinecone_index.configuration.server_variables['index_name']
+    updated_index = Pinecone.from_texts(texts_to_add,embeddings, index_name = index_name)
+    return updated_index
+def update_pinecone_docs(pinecone_index, docs_to_add):
+
+    index_name = pinecone_index.configuration.server_variables['index_name']
+    updated_index = Pinecone.from_documents(docs_to_add,embeddings, index_name = index_name)
+    return updated_index
+    
 def document_text_extraction(extension,file_path):
 
     
@@ -193,6 +206,7 @@ def document_text_extraction(extension,file_path):
         docs = loader.load()
     
     docs = text_splitter.split_documents(docs)
+    print(len(docs))
 
 
     return docs

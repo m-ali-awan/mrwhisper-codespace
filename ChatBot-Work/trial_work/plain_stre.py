@@ -5,6 +5,10 @@ from pathlib import Path
 import openai
 from plain_help import *
 from langchain.document_loaders.chatgpt import ChatGPTLoader
+from langchain.vectorstores import Pinecone
+import pinecone
+from openai_config import OPENAI_API_KEY, MW_ENVIRONMENT, MW_PINECONE_API_KEY
+
 
 
 dest_folder = Path('/home/ubuntu/workspace/Temp/UPLOADED-DIR')
@@ -28,19 +32,20 @@ if 'running_chat_summary' not in st.session_state:
 
 
 st.title('MrWhisperTrial-ChatBot')
-
+#vstore_path = '/home/ubuntu/workspace/Temp/07-14Oct/minimal_knowledgebase'
+pinecone.init(
+    api_key= MW_PINECONE_API_KEY,  # find at app.pinecone.io
+    environment= MW_ENVIRONMENT,  # next to api key in console
+)
+pinecone_mw_index_name = 'minimal-index-dynamic-chatbot'
 embeddings = OpenAIEmbeddings(model = 'text-embedding-ada-002',
                               openai_api_key= OPENAI_API_KEY)
-load_vstore = FAISS.load_local('/home/ubuntu/workspace/Temp/04Oct-FAISS', embeddings = embeddings)
+#load_vstore = FAISS.load_local(vstore_path, embeddings = embeddings)
 text_splitter = RecursiveCharacterTextSplitter(
     separators=["#","##", "###", "\\n\\n","\\n",".", '\n'],
     chunk_size=1500,
     chunk_overlap=100)
 
-if st.button('Start new Chat'):
-    st.session_state.messages = []
-    st.session_state.chat_history = ''
-    st.session_state.running_chat_summary = ''
     
 
 prompt = st.chat_input('Ask Anything?')
@@ -105,25 +110,61 @@ with st.sidebar:
                     with open(os.path.join(str(dir_path), uploaded_file.name), "wb") as f:
                         f.write(uploaded_file.getbuffer())         
                     st.success("Saved File")
-                docs = document_text_extraction('json',str(dir_path/uploaded_file.name))
+                try:
+                    docs = document_text_extraction('json',str(dir_path/uploaded_file.name))                
+                    load_vstore = update_vectorstore_docs(load_vstore,docs,vstore_path)
+                except Exception as e:
+                    print(e)
+                    st.write('Sorry we are not able to add your document to vectorstore')
+                    pass
                 
-                load_vstore = update_vectorstore_docs(load_vstore,docs)
     with st.form("Upload Google Docx here", clear_on_submit=True):
-        uploaded_files = st.file_uploader('Upload Google Docx', type = ['.docx'], accept_multiple_files = False)
+        uploaded_files = st.file_uploader('Upload Google Docx', type = ['.docx'], accept_multiple_files = True)
         button = st.form_submit_button('Submit!')
         if uploaded_files:
             if button:
-                docs = document_text_extraction('docx',dest_folder, uploaded_files)
+                time_now = datetime.now().strftime('%Y%m%d-%H%M%S')
+                folder_name = f'{extension.upper()}-Documents-{time_now}'
+                dir_path = dest_folder/folder_name
+                dir_path.mkdir(exist_ok=True, parents=True)
+                for uploaded_file in uploaded_files:
+                    #bytes_data = uploaded_file.read()
+                    with open(os.path.join(str(dir_path), uploaded_file.name), "wb") as f:
+                        f.write(uploaded_file.getbuffer())         
+                    st.success("Saved File")
+                try:   
+                    docs = document_text_extraction('docx',str(dir_path/uploaded_file.name))
+                    load_vstore = update_vectorstore_docs(load_vstore,docs,vstore_path)
+                except Exception as e:
+                    print(e)
+                    st.write('Sorry we are not able to add your document to vectorstore')
+                    pass
+
                 
                 load_vstore = update_vectorstore_docs(load_vstore,docs)
     with st.form("Upload PDF here", clear_on_submit=True):
-        uploaded_files = st.file_uploader('Upload pdf', type = ['.pdf'], accept_multiple_files = False)
+        uploaded_files = st.file_uploader('Upload pdf', type = ['.pdf'], accept_multiple_files = True)
         button = st.form_submit_button('Submit!')
         if uploaded_files:
             if button:
-                docs = document_text_extraction('pdf',dest_folder,uploaded_files)
-                
-                load_vstore = update_vectorstore_docs(load_vstore,docs)
+
+                time_now = datetime.now().strftime('%Y%m%d-%H%M%S')
+                folder_name = f'{extension.upper()}-Documents-{time_now}'
+                dir_path = dest_folder/folder_name
+                dir_path.mkdir(exist_ok=True, parents=True)
+                for uploaded_file in uploaded_files:
+                    #bytes_data = uploaded_file.read()
+                    with open(os.path.join(str(dir_path), uploaded_file.name), "wb") as f:
+                        f.write(uploaded_file.getbuffer())         
+                    st.success("Saved File")
+                try:
+                    docs = document_text_extraction('pdf',str(dir_path/uploaded_file.name))
+                    
+                    load_vstore = update_vectorstore_docs(load_vstore,docs,vstore_path)
+                except Exception as e:
+                    print(e)
+                    st.write('Sorry we are not able to add your document to vectorstore')
+                    pass
 
 
 
@@ -133,6 +174,19 @@ with st.sidebar:
         st.title('Running Summary')
         st.markdown(st.session_state.running_chat_summary)
         if st.button('Add to VectorStore?'):
-            document_to_add = [st.session_state.running_chat_summary]
+            document_to_add = st.session_state.running_chat_summary
+            print('-----')
+            print(type(document_to_add), document_to_add)
             docs  = text_splitter.split_text(document_to_add)
-            load_vstore = update_vectorstore(load_vstore,document_to_add)
+            print(len(docs))
+            load_vstore = update_vectorstore(load_vstore,document_to_add,vstore_path)
+
+
+
+
+
+
+if st.button('Start new Chat'):
+    st.session_state.messages = []
+    st.session_state.chat_history = ''
+    st.session_state.running_chat_summary = ''
