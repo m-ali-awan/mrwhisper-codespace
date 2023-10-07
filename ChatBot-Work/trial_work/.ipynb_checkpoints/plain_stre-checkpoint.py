@@ -38,7 +38,11 @@ if len(st.session_state.messages) > 1:
         with st.chat_message(message['role']):
             st.markdown(message['content'])
 
-
+print(f':::::::::::::;{st.session_state.running_chat_summary}')
+if len(st.session_state.messages)>2:
+    with st.sidebar:
+        st.title('Running Summary')
+        st.markdown(st.session_state.running_chat_summary)
 
 if prompt: 
     st.session_state.messages.append({'role':'user','content':prompt})
@@ -47,6 +51,7 @@ if prompt:
         st.session_state.messages.append({"role": "user", "content": prompt})
         
 
+        
     if len(st.session_state.messages) > 1:
         chat_history = ''
         for message in st.session_state.messages:
@@ -55,6 +60,7 @@ if prompt:
             elif message['role'] == 'assistant':
                 chat_history += f"AI Reponse :: {message['content']} \n"
         chat_summary = running_summarize(st.session_state.running_chat_summary, chat_history)
+        st.session_state.running_chat_summary = chat_summary
     else:
         chat_summary = ''
     print(f"CHAT-SUMMARY::::::::::::\n")
