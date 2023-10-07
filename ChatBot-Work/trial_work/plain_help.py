@@ -5,6 +5,11 @@ import json
 import os
 from pathlib import Path
 import sys
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.document_loaders import *
+from datetime import datetime
+
+
 sys.path.append('/home/ubuntu/workspace/Creds')
 from openai_config import OPENAI_API_KEY
 openai.api_key = OPENAI_API_KEY
@@ -31,10 +36,11 @@ def running_summarize(chat_history, new_query):
             {'role':'system','content':'''
             You are acting as dynamic memory of a chatbot(Chatbot: A customized one, for helping with latest python libraries, tools like omniverse, usd files etc). You have to be
             mindful, that in dynamic summary generation, you have to return the corrected code/ any configuration related stuff etc. As, there will be a button in USEr Interface, with which 
-            your running summary(at that point) will be saved to a vectorstore. So the purpose is, for Example, user is chatting about a rcent python library code. and now over few iterations
+            your running summary(at that point) will be saved to a vectorstore. So the purpose is, for Example, user is chatting about a recent python library code. and now over few iterations
             of conversations, you both were able to get the working code/config. Now the user wants to save this in vectorstore, so later anyone asks somethingspecifc/related to that, 
-            because of your rich-content summary saved, Chatbot will be able to answer correctly maybe in first attempt, or atleast it will improve with time. So you will have Current
-            -summary, new lines of conversations, and you have to generate new Summary. :: 
+            because of your SHORT-EFFECTIVE summary saved.  So you will have Current
+            -summary, new lines of conversations, and you have to generate new Summary. 
+            ******** DO INCLUDE IN CORRECTED/REQUIRED CODE OR CONFIG - AND BE LESS VERBOSE, FOCUS ON IMPORTANT THINGS ONLY *********:: 
         
             '''},
             
@@ -45,7 +51,8 @@ def running_summarize(chat_history, new_query):
 
     
     response = openai.ChatCompletion.create(
-                            model="gpt-3.5-turbo-16k",
+                            #model="gpt-3.5-turbo-16k",
+                            model="gpt-3.5-turbo",
                             messages=message,
                             temperature=0.7
                                     )
@@ -152,6 +159,62 @@ def decision_to_use_context(docs,query):
                             temperature=0
                                     )
     return response['choices'][0].message.content
+
+
+def update_vectorstore(load_vstore,document_to_add):
+    load_vstore.add_texts(document_to_add)
+    load_vstore.save_local('/home/ubuntu/workspace/Temp/04Oct-FAISS')
+    return load_vstore
+
+
+def update_vectorstore_docs(load_vstore,document_to_add):
+    load_vstore.add_documents(document_to_add)
+    load_vstore.save_local('/home/ubuntu/workspace/Temp/04Oct-FAISS')
+    return load_vstore
+
+text_splitter = RecursiveCharacterTextSplitter(
+    separators=["#","##", "###", "\\n\\n","\\n",".", '\n'],
+    chunk_size=1500,
+    chunk_overlap=100)
+def document_text_extraction(extension,file_path):
+
     
+    if extension == "json":
+        loader = ChatGPTLoader(log_file=str(file_path), num_logs=0)
+        docs = loader.load()
+    elif extension == "txt":
+        loader = TextLoader(str(file_path))
+        docs = loader.load()
+    elif extension =='pdf':
+        loader = PyPDFLoader(str(file_path))
+        docs = loader.load_and_split()
+    elif extension == 'docx':
+        loader = Docx2txtLoader(str(file_path))
+        docs = loader.load()
     
+    docs = text_splitter.split_documents(docs)
+
+
+    return docs
+
+
+def get_last_two_conversations(messages):
+    # Ensure there are at least 4 messages
+    if len(messages) < 4:
+        # Return whatever messages are available
+        last_messages = messages
+    else:
+        # Get the last 4 messages (2 conversations)
+        last_messages = messages[-4:]
     
+    result = ""
+    for message in last_messages:
+        if message["role"] == "user":
+            result += f"User : {message['content']}\n"
+        elif message["role"] == "assistant":
+            result += f"AI ASSISTANT : {message['content']}\n\n"
+    
+    return result
+
+
+
