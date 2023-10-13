@@ -10,7 +10,7 @@ import pinecone
 from openai_config import OPENAI_API_KEY, MW_ENVIRONMENT, MW_PINECONE_API_KEY
 from plain_pinecone_help import *
 from pydantic import BaseModel
-
+#
 
 dest_folder = Path('/home/ubuntu/workspace/Temp/UPLOADED-DIR')
 
@@ -36,6 +36,14 @@ class AskModel(BaseModel):
     query: str
     chat_summary: str
 
+class GetSummary(BaseModel):
+    current_summary : str
+    last_two_conversations : str
+
+class Summary(BaseModel):
+
+    summary : str
+
 @app.post("/ask/")
 def ask(request_body: AskModel):
     prompt = request_body.query
@@ -50,13 +58,13 @@ def upload_file(file: UploadFile = File(...), file_type: str = 'json'):
     return {"status": "File uploaded successfully"}
 
 @app.post("/summary/")
-def get_summary(last_two_conversations : str):
+def get_summary(request_body : GetSummary):
     # Return the running summary
-    running_summarize(st.session_state.running_chat_summary, last_two_conversations)
+    running_summarize(current_summary, last_two_conversations)
     return {"summary": running_chat_summary}
 
 @app.post("/upsert/")
-def upsert_summary(summary : str):
+def upsert_summary(summary : Summary):
     # Upsert the running summary to Pinecone vectorstore
     # ... your logic here ...
     docs  = text_splitter.split_text(summary)

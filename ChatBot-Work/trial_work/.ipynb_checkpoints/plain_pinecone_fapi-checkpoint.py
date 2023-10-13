@@ -10,7 +10,7 @@ import pinecone
 from openai_config import OPENAI_API_KEY, MW_ENVIRONMENT, MW_PINECONE_API_KEY
 from plain_pinecone_help import *
 from pydantic import BaseModel
-
+#
 
 dest_folder = Path('/home/ubuntu/workspace/Temp/UPLOADED-DIR')
 
