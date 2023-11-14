@@ -9,12 +9,21 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import *
 from datetime import datetime
 from langchain.vectorstores import Pinecone
-
+import streamlit as st
 
 import sys
 sys.path.append('/home/ubuntu/workspace/Creds')
 from openai_config import OPENAI_API_KEY, MW_ENVIRONMENT, MW_PINECONE_API_KEY
 openai.api_key = OPENAI_API_KEY
+
+
+# for searpapi
+from langchain.llms import OpenAI
+from langchain.agents import load_tools
+from langchain.agents import initialize_agent
+from serpapi_config import SERPAPI_KEY
+os.environ['SERPAPI_API_KEY'] = SERPAPI_KEY
+os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
 embeddings = OpenAIEmbeddings(model = 'text-embedding-ada-002',
                               openai_api_key= OPENAI_API_KEY)
@@ -23,6 +32,22 @@ text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1500,
     chunk_overlap=100)
 
+@st.cache_resource
+def initialize_llm_and_tools():
+    llm = OpenAI(temperature=0.9,openai_api_key = OPENAI_API_KEY)
+    tools = load_tools(["serpapi"], llm=llm)
+    agent = initialize_agent(tools, llm, agent="zero-shot-react-description", verbose=True)
+
+    return agent
+
+def run_query(agent, query):
+    
+    return agent.run(query)
+
+    
+
+
+google_agent = initialize_llm_and_tools()  # This will be cached after the first run
 def running_summarize(chat_history, new_query):
 
 
@@ -71,7 +96,7 @@ def return_docs_from_pinecone_lang( query,pinecone_index, embeddings =embeddings
     '''
     
     docs = pinecone_index.similarity_search(query, k =3)
-
+    print(docs)
     final_str = ''
     for one in docs:
         final_str += one.page_content
@@ -123,6 +148,8 @@ You will have memory, and previous messages will be provided to you. Also, custo
                             temperature=0.7
                                     )
     return response['choices'][0].message.content
+
+
 
 
 def decision_to_use_context(docs,query):
@@ -225,3 +252,51 @@ def get_response_type(s):
 
 
 
+def main_chat_with_google_fn(query, vstore, chat_summary):
+
+    context,decision_context = return_docs_from_pinecone_lang(query,vstore)
+    to_use_context = decision_to_use_context(decision_context,query)
+    to_use_context_decision = get_response_type(to_use_context)
+    print(to_use_context)
+    if to_use_context_decision == 'Yes':
+        context = context
+        print('USED:::')
+    elif to_use_context_decision =='No':
+        print('-------')
+        print(query, google_agent)
+        print('-------')
+        google_response = run_query(google_agent, query)
+        #context = '''We don't have any relevant Information, so use your best knowledge, and if you don't know, say : i don't know. Kindly provide me some context, or internet access'''
+        context = google_response
+        print(context)
+
+    user_message = f"""
+    Context of knowledgebase:
+    -----
+    {context}
+    -----
+    Running summary of chat:
+    -----
+    {chat_summary}
+    ----
+    Query : {query}
+
+    AI Response:
+
+    """
+    message = [
+        {'role':'system','content':'''You are a customized Chatbot, and will be helping in different domains; like code helping, omniverse stuff, ShotGrid docs, api stuff etc. 
+You will have memory, and previous messages will be provided to you. Also, custom knowlwdgebase, similar chunks of info, will be provided as context.'''},
+        {'role':'user','content':user_message}
+        
+        
+    ]
+
+    
+    response = openai.ChatCompletion.create(
+                            #model="gpt-3.5-turbo-16k",
+                            model = 'gpt-4',
+                            messages=message,
+                            temperature=0.7
+                                    )
+    return response['choices'][0].message.content
